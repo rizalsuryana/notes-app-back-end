@@ -1,0 +1,24 @@
+{
+  "name": "notes-app-back-end",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/server.js",
+    "lint": "eslint ./"
+  },
+  "keywords": [],
+  "author": "rizal s",
+  "license": "ISC",
+  "description": "## Kriteria 1 - Web Server dapat menyimpan catatan Kriteria pertama adalah web server dapat menyimpan catatan yang ditambahkan melalui aplikasi web. Tenang, untuk memenuhi kriteria ini Anda tidak perlu menggunakan database. Cukup simpan pada memory server dalam bentuk array JavaScript.",
+  "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "eslint": "^9.22.0",
+    "eslint-config-dicodingacademy": "^0.9.4",
+    "globals": "^16.0.0",
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^21.4.0"
+  }
+}
