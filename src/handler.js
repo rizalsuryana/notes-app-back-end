@@ -116,9 +116,41 @@ const editNoteByHandler = (request, h) => {
   return response;
 };
 
+
+// delete Note
+const deleteNoteByIdHandler = (request, h) => {
+  const { id } = request.params; //mendapatkan nilai id yang dikirim
+
+  const index = notes.findIndex((note)=> note.id === id); //dapakan index sesuai id yang didapat
+
+  // pastikan nilai index tersedia (tidak -1)
+  if (index !== -1) {
+    notes.splice(index, 1);
+    const response = h.response({
+      status: 'success',
+      message: 'Catatan berhasil dihapus',
+    });
+    response.code(200);
+    return response;
+  }
+
+  // Jika index bernilai -1
+  const response = h.response({
+    status: 'fail',
+    message: 'Catatan gagal dihapus. Id tidak ditemukan',
+  });
+  response.code(404);
+  return response;
+
+
+};
+
+
+
 module.exports = {
   addNoteHandler,
   getAllNotesHandler,
   getNoteByIdHandler,
   editNoteByHandler,
+  deleteNoteByIdHandler,
 };
