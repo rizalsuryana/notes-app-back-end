@@ -31,7 +31,7 @@ const addNoteHandler = (request, h) => {
   }
 
   const response = h.response({
-    staus: 'fail',
+    status: 'fail',
     message: 'Catatan gagal ditambahkan',
   });
   response.code(500);
@@ -102,7 +102,7 @@ const editNoteByHandler = (request, h) => {
 
     const response = h.response({
       status: 'success',
-      message: 'Catatan berhasil diperbaharui',
+      message: 'Catatan berhasil diperbarui',
     });
     response.code(200);
     return response;
